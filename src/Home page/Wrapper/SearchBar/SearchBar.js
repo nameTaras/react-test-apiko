@@ -1,34 +1,40 @@
 import React, {Component} from 'react';
 import './SearchBar.css';
+import { withRouter } from 'react-router-dom';
+import { FormControl, FormGroup, InputGroup, Button } from 'react-bootstrap';
 
 class SearchBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {search: '', path: ''};
+        this.state = {search: ''};
 
-        this.resultOfSearch = this.resultOfSearch.bind(this);
+        this.changeSearch = this.changeSearch.bind(this);
+        this.searchByKeyword = this.searchByKeyword.bind(this);
     };
 
-    resultOfSearch(event) {
-        event.preventDefault();
-        const search = this.input.value;
-        const path = "/search?" + search;
-        this.setState({
-            search,
-            path
-        });
+    changeSearch = (e) => {
+        e.preventDefault();
+        this.setState({search: e.target.value});
+    };
+
+    searchByKeyword = (e) => {
+        e.preventDefault();
+        this.props.history.push('/search?q=' + this.state.search);
     };
 
     render() {
         return (
-            <form>
-                <input id="search" type="text" ref={(input) => this.input = input} />
-                <a href={this.state.path}>
-                    <button id="button" type="button" onClick={this.resultOfSearch}>Search</button>
-                </a>
-            </form>
+                    <FormGroup bsSize="large">
+                        <InputGroup>
+                            <InputGroup.Button>
+                                <Button onClick={this.searchByKeyword}>Search</Button>
+                            </InputGroup.Button>
+                            <FormControl type="text" className="form-control" placeholder="Search"
+                                         onChange={this.changeSearch} />
+                        </InputGroup>
+                    </FormGroup>
         )
     }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

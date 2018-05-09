@@ -5,15 +5,6 @@ import WrapperSearchPage from './Search page/Wrapper/Wrapper.js';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
-    searchPath(path) {
-        console.log(path)
-    }
-
     render() {
         return (
             <BrowserRouter>
