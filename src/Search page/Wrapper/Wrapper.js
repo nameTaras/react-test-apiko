@@ -25,7 +25,7 @@ class Wrapper extends Component {
 
     tweetObj () {
         const key = this.props.history.location.search.split('=')[1];
-        const url = `https://oauth.io/request/twitter/https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json%3Fq%3D${key}%26count%3D100`;
+        const url = `https://oauth.io/request/twitter/https://api.twitter.com/1.1/search/tweets.json?q=${key}&count=100`;
 
         fetch(url, {headers, method: 'GET'})
             .then(response => response.json())
