@@ -1,6 +1,4 @@
-.wrapper {
-    padding: 10px 0;
-    width: 80%;
-    height: 95%;
-    border: 1px solid black;
+.tweetsWrapper {
+    width: 50%;
+    font-size: 15px;
 }

@@ -1,15 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Wrapper.css';
 import SearchBarWithRouter from './SearchBar/SearchBar.js';
 
-class Wrapper extends Component {
-    render() {
-        return (
-            <div className="wrapper">
-                <SearchBarWithRouter />
-            </div>
-        )
-    }
+export default () => {
+    return (
+        <div className="wrapper">
+            <img
+                className='twitterIcon'
+                src='https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png'
+                alt='twitterIcon'
+            />
+            <h2>Find interesting tweets</h2>
+            <SearchBarWithRouter />
+        </div>
+    )
 }
-
-export default Wrapper;

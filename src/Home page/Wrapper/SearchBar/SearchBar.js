@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
-import './SearchBar.css';
 import { withRouter } from 'react-router-dom';
-import { FormControl, FormGroup, InputGroup, Button } from 'react-bootstrap';
+import { FormControl, Button } from 'react-bootstrap';
+import './SearchBar.css';
+
 
 class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = {search: ''};
-
         this.changeSearch = this.changeSearch.bind(this);
         this.searchByKeyword = this.searchByKeyword.bind(this);
     };
 
     changeSearch = (e) => {
         e.preventDefault();
-        this.setState({search: e.target.value});
+        const search = e.target.value.replace(/#/g, '%23');
+        this.setState({search});
     };
 
     searchByKeyword = (e) => {
@@ -24,15 +25,14 @@ class SearchBar extends Component {
 
     render() {
         return (
-                    <FormGroup bsSize="large">
-                        <InputGroup>
-                            <InputGroup.Button>
-                                <Button onClick={this.searchByKeyword}>Search</Button>
-                            </InputGroup.Button>
-                            <FormControl type="text" className="form-control" placeholder="Search"
-                                         onChange={this.changeSearch} />
-                        </InputGroup>
-                    </FormGroup>
+            <form className='searchForm'>
+                <FormControl
+                    type="text"
+                    placeholder="Search"
+                    onChange={this.changeSearch}
+                />
+                <Button type='submit' bsSize='large' onClick={this.searchByKeyword}>Search</Button>
+            </form>
         )
     }
 }

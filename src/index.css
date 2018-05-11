@@ -1,13 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #343d46;
+    background-color: #e6ecf0;
 }
+
 #root {
-    position: absolute;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
