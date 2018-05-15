@@ -1,0 +1,28 @@
+.tweet {
+    border-bottom: 1px solid #e6ecf0;
+    padding: 10px 60px 10px 70px;
+    margin: 0 10px;
+    position: relative;
+    background-color: white;
+}
+
+.photoOfUser {
+    float: left;
+    position: absolute;
+    margin-left: -58px;
+    border-radius: 100px;
+}
+
+.userName {
+    margin-right: 10px;
+
+}
+
+.screenName {
+    color: grey;
+}
+
+.mediaUrl {
+    height: auto;
+    width: 460px;
+}

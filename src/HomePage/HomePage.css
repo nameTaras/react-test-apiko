@@ -1,0 +1,10 @@
+.wrapper {
+    padding: 10px 0;
+    width: 80%;
+    text-align: center;
+}
+
+.twitterIcon {
+    height: 200px;
+    width: auto;
+}
