@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import './Tweets.css';
 
 class Tweets extends Component {
     constructor(props) {

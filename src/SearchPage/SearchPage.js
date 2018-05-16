@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import './SearchPage.css';
 import Loader from '../Loader/Loader';
 import Tweets from './Tweets/Tweets.js';
 import { withRouter } from 'react-router-dom';

@@ -1,5 +1,4 @@
 import React from 'react';
-//import './HomePage.css';
 import SearchBarWithRouter from './SearchBar/SearchBar.js';
 
 export default () => {
